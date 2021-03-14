@@ -1,0 +1,13 @@
+<div class="image-container">
+    <img (click)="getDetail(image.id)" class="image" [src]="image.url">
+    <div class="title-container">
+        <div class="title">{{image.title}}</div>
+        <span>
+        <img src="assets/svg/star.svg" 
+        [ngClass]="{
+            'star-disabled': (!image.favorite),
+            'star-enabled': (image.favorite)}">
+        </span>
+    </div>
+
+</div>

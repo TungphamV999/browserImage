@@ -1,0 +1,14 @@
+.routlet{
+    width: 100%;
+    height: calc(100% - var(--navbar-height));
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: var(--background-color-darker);
+    transition: background-color var(--transition-time) ease-in-out, color var(--transition-time) ease-in-out; 
+}
+
+.nav-bar{
+    height: var(--navbar-height);
+    z-index: 1;
+    width: 100%;
+}

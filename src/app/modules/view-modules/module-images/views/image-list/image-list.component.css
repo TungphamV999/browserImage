@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0rem 1rem 0 1rem;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+    width: 100%;
+}
+
+button {
+    height: 2.5rem;
+    margin: 1rem;
+}
+
+mat-label,
+input {
+    color: var(--font-color)
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    box-shadow: var(--small-box-shadow);
+    border-radius: 4px;
+    padding: 1rem;
+    width: 60%;
+    flex-wrap: wrap;
+}
+
+.ratio {
+    display: block;
+    width: 100%;
+    margin-left: 1rem;
+}

@@ -1,0 +1,72 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+:root {
+    /*CSS varibles*/
+    --basic-font-size: 14px;
+    --table-font-size: 0.85rem;
+    --table-font-weight: 400;
+    --navbar-height: 50px;
+    --pwc-dark-red-color-values: 145, 26, 26;
+    --pwc-dark-red-color: rgb(var(--pwc-dark-red-color-values));
+    --pwc-orange-color-values: 255, 102, 0;
+    --pwc-orange-color: rgb(var(--pwc-orange-color-values));
+    --success-color: rgb(111, 255, 111);
+    --dark-success-color: rgb(23, 92, 44);
+    --error-color: rgb(255, 80, 80);
+    --dark-error-color: rgb(224, 48, 30);
+    --warning-color: rgb(225, 182, 0);
+    --small-box-shadow: 0 0.25rem 0.5rem -0.25rem var(--box-shadow-color), 0 0 0.5rem -0.25rem var(--box-shadow-color);
+    --medium-box-shadow: 0 0.5rem 1rem -0.5rem var(--box-shadow-color), 0 0 1rem -0.5rem var(--box-shadow-color);
+    --big-box-shadow: 0 1rem 2rem -1rem var(--box-shadow-color), 0 0 2rem -1rem var(--box-shadow-color);
+    --gradient-background-color: linear-gradient(45deg, var(--pwc-dark-red-color), var(--pwc-orange-color));
+    --transition-time: 0.2s;
+    --theme-transition: background-color var(--transition-time) easy-in-out, color var(--transition-time) easy-in-out;
+    /*Basic font color set up*/
+    font-size: var(--basic-font-size);
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color: var(--font-color);
+  }
+  
+  [color-theme="light"] {
+    --primary-color: rgb(208,74,2);
+    --primary-color-values: 208, 74, 2;
+    --secondary-color: rgb(235, 140, 0);
+    --secondary-color-values: 235, 140, 0;
+    --font-color: rgb(60,60,60);
+    --font-color-light: rgba(140,140,140);
+    --font-color-lighter: rgba(195,195,195);
+    --font-color-values: 60,60,60;
+    --background-color: grey;
+    --background-color-darker: rgb(255,255,255);
+    --background-color-values: 255,255,255;
+    --navbar-background-color: rgb(245,245,245);
+    --box-shadow-color: rgba(0,0,0,0.2);
+    --border-color-light: rgba(0,0,0,0.08);
+    --icon-success-color: var(--dark-success-color);
+    --icon-error-color: var(--dark-error-color);
+    --modal-container-intensity: 0.4;
+  }
+  
+  [color-theme="dark"] {
+    --primary-color: rgb(235, 140, 0);
+    --primary-color-values: 235, 140, 0;
+    --secondary-color: rgb(208, 74, 2);
+    --secondary-color-values: 208, 74, 2;
+    --font-color: rgb(222,222,222);
+    --font-color-light: rgb(125,125,125);
+    --font-color-lighter: rgba(75,75,75);
+    --font-color-values: 255,255,255;
+    --background-color: rgb(30,30,30);
+    --background-color-darker: rgb(20,20,20);
+    --background-color-values: 0,0,0;
+    --navbar-background-color: rgb(40,40,40);
+    --box-shadow-color: rgba(0,0,0,0.9);
+    --border-color-light: rgba(255,255,255,0.08);
+    --icon-success-color: var(--success-color);
+    --icon-error-color: var(--error-color);
+    --modal-container-intensity: 0.6;
+  }

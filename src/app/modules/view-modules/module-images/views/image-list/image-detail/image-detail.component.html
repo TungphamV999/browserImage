@@ -1,0 +1,14 @@
+<div class="flex-container">
+    <div class="card">
+        <div style="position: absolute; top: 1.5rem; left: 19rem; font-weight:normal;" (click)="previousImage()">
+            previous </div>
+        <div style="position: absolute; top: 1.5rem; right: 19rem; font-weight:normal;" (click)="nextImage()">
+            next
+        </div>
+        <h2 (click)="backToImageList()">{{tilte$ | async}}</h2>
+        <img style="border-radius: 10px;" [src]="url$ | async">
+        <div style="width: 600px; margin-top: 1rem; align-items: center;">
+            <div style="text-align: center;">{{description$ | async}}</div>
+        </div>
+    </div>
+</div>
