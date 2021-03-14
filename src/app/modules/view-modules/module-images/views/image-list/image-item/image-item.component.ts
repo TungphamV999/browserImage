@@ -19,7 +19,6 @@ export class ImageItemComponent implements OnInit {
   }
 
   getDetail(id: any) {
-    console.log(id);
     this.router.navigate(['image-list', id])
   }
 }

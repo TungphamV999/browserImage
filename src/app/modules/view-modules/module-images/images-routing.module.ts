@@ -15,17 +15,12 @@ import { ImageDetailComponent } from './views/image-list/image-detail/image-deta
         path: "",
         pathMatch: 'full',
         component: ImageListComponent,
-
       },
       {
         path: "image-list/:id",
+        pathMatch: 'full',
         component: ImageDetailComponent
       }
-      // {
-      //   path: "**",
-      //   pathMatch: 'full',
-      //   redirectTo: '' 
-      // }
     ])
   ]
 })

@@ -4,6 +4,7 @@ import { Image, ImagesRatio } from '../../models/image';
 import { ImageService } from '../../services/image.service';
 import { map, shareReplay, switchMap, tap } from 'rxjs/operators';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-image-list',
@@ -14,12 +15,16 @@ export class ImageListComponent implements OnInit, OnDestroy {
 
   constructor(
     private imageService: ImageService,
-    private activeRoute: ActivatedRoute,
-    private router: Router
   ) { }
 
   ngOnInit(): void {
   }
+
+
+  // imagesFilter: FormGroup = new FormGroup({
+  //   titleFilter: new FormControl(''),
+  //   isFave: new FormControl(null)
+  // })
 
   ratioImages: string;
   getFavImages: boolean = false;
@@ -32,15 +37,15 @@ export class ImageListComponent implements OnInit, OnDestroy {
     this.isFavoriteFilter.next(isFavoriteFilter);
   }
 
-  imagesSub = this.isFavoriteFilter.pipe(
+  getFavoriteImageSub: Subscription = this.isFavoriteFilter.pipe(
     switchMap(isFF => this.imageService.getImages(isFF))
   ).subscribe(imagesRatio => {
     this.allImages$.next(imagesRatio.images);
     this.ratio$.next(imagesRatio.ratio);
-
   })
 
   ngOnDestroy() {
+    this.getFavoriteImageSub.unsubscribe();
   }
 
 }

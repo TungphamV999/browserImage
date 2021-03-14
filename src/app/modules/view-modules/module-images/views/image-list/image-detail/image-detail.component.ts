@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { ImageService } from '../../../services/image.service';
 import { Image } from '../../../models/image';
 import { switchMap } from 'rxjs/operators';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { switchMap } from 'rxjs/operators';
   templateUrl: './image-detail.component.html',
   styleUrls: ['./image-detail.component.css']
 })
-export class ImageDetailComponent implements OnInit {
+export class ImageDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private activeRoute: ActivatedRoute,
@@ -22,16 +23,12 @@ export class ImageDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  url$: BehaviorSubject<string> = new BehaviorSubject<string>('')
-  description$: BehaviorSubject<string> = new BehaviorSubject<string>('')
-  tilte$: BehaviorSubject<string> = new BehaviorSubject<string>('')
+  image: Image;
 
   subParams = this.activeRoute.params.pipe(
     switchMap(param => this.imageService.getImage(param.id))
   ).subscribe(image => {
-    this.url$.next(image.url);
-    this.description$.next(image.description);
-    this.tilte$.next(image.title);
+    this.image = image;
   }
   )
 
@@ -39,13 +36,13 @@ export class ImageDetailComponent implements OnInit {
     this.router.navigate(['image-list'])
   }
 
-  previousImage(){
-
+  previousImage() {
   }
 
-  nextImage(){
-    
+  nextImage() {
   }
 
-
+  ngOnDestroy() {
+    this.subParams.unsubscribe();
+  }
 }

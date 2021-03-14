@@ -5,10 +5,10 @@
         <div style="position: absolute; top: 1.5rem; right: 19rem; font-weight:normal;" (click)="nextImage()">
             next
         </div>
-        <h2 (click)="backToImageList()">{{tilte$ | async}}</h2>
-        <img style="border-radius: 10px;" [src]="url$ | async">
+        <h2 (click)="backToImageList()">{{image.title}}</h2>
+        <img style="border-radius: 10px;" [src]="image.url">
         <div style="width: 600px; margin-top: 1rem; align-items: center;">
-            <div style="text-align: center;">{{description$ | async}}</div>
+            <div style="text-align: center;">{{image.description}}</div>
         </div>
     </div>
 </div>
