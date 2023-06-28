@@ -1,11 +1,25 @@
 <nav>
-    <div class="navbar-left-side">
-        <div class="link-container" [routerLink]="['/home']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" matRipple>
-            <mat-icon>home</mat-icon> Home
-        </div>
-
-        <div class="link-container" [routerLink]="['/image-list']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}" matRipple> ImageList
-        </div>
-
+  <div class="navbar-left-side">
+    <div
+      class="link-container"
+      [routerLink]="['/home']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+      matRipple
+    >
+      <mat-icon>home</mat-icon> Home
     </div>
+
+    <div
+      class="link-container"
+      [routerLink]="['/image-list']"
+      routerLinkActive="active-link"
+      [routerLinkActiveOptions]="{ exact: true }"
+      matRipple
+    >
+      ImageList
+    </div>
+
+    <div>Olalala</div>
+  </div>
 </nav>
